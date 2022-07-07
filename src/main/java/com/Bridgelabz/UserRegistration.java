@@ -10,6 +10,7 @@ public class UserRegistration {
     static final String TEST_PASSWORD1_PATTERN = "^[a-z]{8}$";
     static final String TEST_PASSWORD2_PATTERN = "(?=.*[A-Z])[a-z A-Z]{8,}$";
     static final String TEST_PASSWORD3_PATTERN = "(?=.*[0-9])+(?=.*[A-Z])+[a-zA-Z0-9]{8,}$";
+    static final String TEST_PASSWORD4_PATTERN = "^(?=.*[0-9])"+"(?=.*[a-z])(?=.*[A-Z])"+"(?=.*[@#$%^&+=])"+"(?=\\S+$).{8,}$";
 
     public boolean validateFirstName(String exp) {
         Pattern pattern = Pattern.compile(TEST_NAME_PATTERN);
@@ -50,6 +51,12 @@ public class UserRegistration {
     public boolean validatePassword3(String password3) {
         Pattern pattern = Pattern.compile(TEST_PASSWORD3_PATTERN);
         Matcher matcher = pattern.matcher(password3);
+        return matcher.matches();
+    }
+
+    public boolean validatePassword4(String password4) {
+        Pattern pattern = Pattern.compile(TEST_PASSWORD4_PATTERN);
+        Matcher matcher = pattern.matcher(password4);
         return matcher.matches();
     }
 }
