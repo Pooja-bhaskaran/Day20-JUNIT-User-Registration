@@ -20,4 +20,10 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validateLastName("Bhaskaran");
         assertTrue(result);
     }
+
+    @Test
+    void givenEmailId_WhenItsProper_shouldReturnTrue(){
+        boolean result = userRegistration.validateEmailID("abc.xyz@bl.com.in");
+        assertTrue(result);
+    }
 }
