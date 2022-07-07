@@ -11,4 +11,10 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(exp);
         return matcher.matches();
     }
+
+    public boolean validateLastName(String exp) {
+        Pattern pattern = Pattern.compile(TEST_NAME_PATTERN);
+        Matcher matcher = pattern.matcher(exp);
+        return matcher.matches();
+    }
 }

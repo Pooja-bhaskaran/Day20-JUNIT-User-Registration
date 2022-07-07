@@ -14,4 +14,10 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validateFirstName("Pooja");
         assertTrue(result);
     }
+
+    @Test
+    void givenLastNameFirstCharacterUPPERCASE_WhenProper_ShouldReturnTrue(){
+        boolean result = userRegistration.validateLastName("Bhaskaran");
+        assertTrue(result);
+    }
 }
