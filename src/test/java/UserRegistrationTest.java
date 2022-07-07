@@ -50,4 +50,10 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validatePassword3("Abcdef10");
         assertTrue(result);
     }
+
+    @Test
+    void givenPassword4_WhenItsProper_shouldReturnTrue(){
+        boolean result = userRegistration.validatePassword4("Abcdef@123");
+        assertTrue(result);
+    }
 }
